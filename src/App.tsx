@@ -1,13 +1,7 @@
-import './App.css'
+import "./App.css";
 
 function App() {
-
-
-  return (
-    <>
-      React/Redux Toolkit
-    </>
-  )
+  return <>React/Redux Toolkit</>;
 }
 
-export default App
+export default App;
