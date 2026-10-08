@@ -1,15 +1,21 @@
+import type { JSX } from "react";
 import { type SyntheticEvent, useState } from "react";
 import "./JournalForm.scss";
 import { Button } from "../Button/Button.tsx";
+import type { IFormData } from "../../models/data-interface.ts";
 
-export const JournalForm = () => {
+interface JournalFormProps {
+  outputCb: (form: IFormData) => void;
+}
+
+export const JournalForm = ({ outputCb }: JournalFormProps): JSX.Element => {
   const [inputData, setInputData] = useState("");
 
   const addJournal = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    console.log("Данные формы:", data);
+    const data = Object.fromEntries(formData.entries()) as unknown as IFormData;
+    outputCb(data);
   };
 
   return (
