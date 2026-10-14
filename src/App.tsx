@@ -4,6 +4,7 @@ import { Button } from "./components/Button/Button.tsx";
 import "./App.css";
 import { JournalForm } from "./components/JournalForm/JournalForm.tsx";
 import type { IFormData } from "./models/data-interface.ts";
+import { JournalList } from "./components/JournalList/JournalList.tsx";
 
 function App() {
   const [timerKey, setTimerKey] = useState(0);
@@ -28,9 +29,9 @@ function App() {
     list = (
       <ul>
         {journalList.map((form: IFormData, idx: number) => (
-          <li key={idx}>
+          <JournalList key={idx}>
             <div>{form.title}</div>
-          </li>
+          </JournalList>
         ))}
       </ul>
     );
