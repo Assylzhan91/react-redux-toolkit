@@ -6,6 +6,12 @@
   margin: auto;
 }
 
+.input {
+  background-color: #9ca3af;
+}
+
 .input-error {
   border: 1px solid red;
+  background-color: red;
+  color: #fff;
 }
